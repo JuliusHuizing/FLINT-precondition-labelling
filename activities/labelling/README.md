@@ -30,11 +30,11 @@ Because you can replace this with "indien" which indicates a precondtion.
     * "Bij" means...
 
 - "bij algemene maatregel van bestuur*"
-[14]
+[14, 53]
 - "bij ministerile regeling*"
 [15]
-- "bij of krachtens algemene maatregel van betsuur"
-[28]
+- "bij of krachtens algemene maatregel van bestuur"
+[28, 54]
 
 
 
@@ -82,11 +82,27 @@ Because you can replace this with "indien" which indicates a precondtion.
 - "op aanvraag"
 [40]
 
-"met inachtneming van..."
+-  "met inachtneming van..."
 [42]
 
-"dan met inachtneming van"
+- "dan met inachtneming van"
 [46]
 
-"overeenkomstig"
+- "overeenkomstig"
 [50]
+
+- "bij algemene maatregel van bestuur*"
+[14, 53]
+
+- "bij ministerile regeling*"
+[15]
+
+- "bij of krachtens algemene maatregel van bestuur"
+[28, 54]
+
+- "bij regeling van..."
+[56]
+
+- "onverminderd" 
+[6, 57]
+
