@@ -106,3 +106,7 @@ Because you can replace this with "indien" which indicates a precondtion.
 - "onverminderd" 
 [6, 57]
 
+- "binnen 24 uur na aankomst..."
+[58]
+
+- "
