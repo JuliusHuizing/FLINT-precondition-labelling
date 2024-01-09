@@ -37,7 +37,6 @@ Because you can replace this with "indien" which indicates a precondtion.
 [28, 54]
 
 
-
 > **note: there are typo's in their sentences like miniseteriel so we should use fuzzy search.
 
 
@@ -109,4 +108,4 @@ Because you can replace this with "indien" which indicates a precondtion.
 - "binnen 24 uur na aankomst..."
 [58]
 
-- "
+-
