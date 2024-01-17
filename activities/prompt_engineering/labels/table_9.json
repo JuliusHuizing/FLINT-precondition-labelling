@@ -1,0 +1,34 @@
+{
+    "Act_frame": "granting a temporary regular residence permit",
+    "Action": "grant",
+    "Actor": "Minister of Justice and Security",
+    "Object": "application to provide a temporary regular residence permit",
+    "Recipient / Interested Party": "alien",
+    "Preconditions": [
+      {
+        "AND": [
+          {
+            "condition": "regular residence permit is granted from the day on which the alien has demonstrated that he meets all conditions"
+          },
+          {
+            "NOT": "residence permit granted earlier than from the day on which the application was received"
+          },
+          {
+            "NOT": "alien has a travel ban or has been signaled for the purpose of refusing entry"
+          },
+          {
+            "NOT": "alien has pronouncement of undesirability"
+          }
+        ]
+      }
+    ],
+    "Creating_postcondition": [
+      "decision to grant an application to provide a temporary regular residence permit",
+      "granting a temporary regular residence permit under restrictions",
+      "determine the period of validity of the regular residence permit",
+      "provide the alien with a document proving lawful residence"
+    ],
+    "Terminating_postcondition": "application to provide a temporary regular residence permit",
+    "References_to_sources": "Art. 14 (1) Aliens Act, main clause and under (a)"
+  }
+  
