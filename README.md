@@ -35,6 +35,15 @@ curl -X POST http://127.0.0.1:5000/extract-act-frame \
 -d '{"article_string": "personal data shall be processed lawfully."}'
 ```
 
+**Note** that by default, the server mimics processing time by sleeping for 5 - 10 seconds before returning a response. If you want disable this behavior, change the key of your request type to "debug":
+
+```bash
+curl -X POST http://127.0.0.1:5000/extract-act-frame \
+-H "Content-Type: application/json" \
+-d '{"debug": "personal data shall be processed lawfully."}'
+```
+
+
 ## Report:
 - [view only](https://www.overleaf.com/read/vwhrjrsnsxrj#6d5464)
 
