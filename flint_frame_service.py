@@ -1,4 +1,6 @@
 from flask import Flask, jsonify, request
+import time
+import random
 
 
 app = Flask(__name__)
@@ -35,7 +37,8 @@ def data_process():
             "Art. 14 (1) Aliens Act, main clause and under (a)"
         ]
     }
-
+    # wait for 5 - 10 seconds to mimmick processing time
+    time.sleep(random.randint(5, 10))
     return jsonify(response)
 
 def validate_request(request):
