@@ -1,0 +1,127 @@
+openapi: 3.0.0
+info:
+  title: Residence Permit API
+  version: 1.0.0
+# ... other necessary parts of the spec ...
+paths:
+  /dataprocess:
+    post:
+      summary: Process user input
+      description: Endpoint to process user input
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              
+      responses:
+        '200':
+          description: Successfully processed the data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MainResponse'
+components:
+  schemas:
+    # ... [Previous definitions for Condition, NotCondition, AndConditions, OrConditions, NotConditions, and Preconditions] ...
+
+    MainResponse:
+      type: object
+      properties:
+        Action:
+          type: string
+        Actor:
+          type: string
+        Object:
+          type: string
+        Recipient:
+          type: string
+        Preconditions:
+          $ref: '#/components/schemas/Preconditions'
+        Creating_postcondition:
+          type: array
+          items:
+            type: string
+        Terminating_postcondition:
+          type: array
+          items:
+            type: string
+        References_to_sources:
+          type: array
+          items:
+            type: string
+      required:
+        - Action
+        - Actor
+        - Object
+        - Recipient
+        - Preconditions
+        - Creating_postcondition
+        - Terminating_postcondition
+        - References_to_sources
+
+    Condition:
+      type: object
+      properties:
+        condition:
+          type: string
+      required:
+        - condition
+
+    NotCondition:
+      type: object
+      properties:
+        NOT:
+          oneOf:
+            - $ref: '#/components/schemas/Condition'
+            - type: string
+      required:
+        - NOT
+
+    AndConditions:
+      type: object
+      properties:
+        AND:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/Condition'
+              - $ref: '#/components/schemas/NotCondition'
+      required:
+        - AND
+
+    OrConditions:
+      type: object
+      properties:
+        OR:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/Condition'
+              - $ref: '#/components/schemas/NotCondition'
+      required:
+        - OR
+
+    NotConditions:
+      type: object
+      properties:
+        NOT:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/Condition'
+              - $ref: '#/components/schemas/NotCondition'
+      required:
+        - NOT
+
+    Preconditions:
+      type: array
+      items:
+        oneOf:
+          - $ref: '#/components/schemas/AndConditions'
+          - $ref: '#/components/schemas/OrConditions'
+          - $ref: '#/components/schemas/NotConditions'
