@@ -1,9 +1,8 @@
 {
-    "Act_frame": "granting a temporary regular residence permit",
     "Action": "grant",
     "Actor": "Minister of Justice and Security",
     "Object": "application to provide a temporary regular residence permit",
-    "Recipient / Interested Party": "alien",
+    "Recipient": "alien",
     "Preconditions": [
       {
         "AND": [

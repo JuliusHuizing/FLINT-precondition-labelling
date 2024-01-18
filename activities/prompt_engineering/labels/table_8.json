@@ -1,9 +1,8 @@
 {
-    "Act_frame": "disregarding a temporary regular residence permit",
     "Action": "disregard",
     "Actor": "Minister of Justice and Security",
     "Object": "application to provide a temporary regular residence permit",
-    "Recipient / Interested Party": "alien",
+    "Recipient": "alien",
     "Preconditions": [
       {
         "NOT": "fees due for the settlement of to grant a temporary regular residence permit have been paid"
