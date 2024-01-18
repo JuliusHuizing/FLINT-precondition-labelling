@@ -37,8 +37,7 @@ def data_process():
             "Art. 14 (1) Aliens Act, main clause and under (a)"
         ]
     }
-    # wait for 5 - 10 seconds to mimmick processing time
-    time.sleep(random.randint(5, 10))
+    # wait for 5 - 10 seconds to mimic processing time
     return jsonify(response)
 
 def validate_request(request):
@@ -51,7 +50,13 @@ def validate_request(request):
 
     # Check if the JSON data contains only one key and the value is a string
     if len(data) == 1 and isinstance(list(data.values())[0], str):
-      return
+        # if key is debug, wait for 5 - 10 seconds
+        if "debug" in data.keys():
+            if data["debug"] == "true":
+                return
+        else:
+            time.sleep(random.randint(5, 10))
+            return
     else:
         return jsonify({"error": "Request JSON must contain exactly one key with a string value"}), 400
 
