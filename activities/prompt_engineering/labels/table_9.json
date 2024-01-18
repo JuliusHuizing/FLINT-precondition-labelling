@@ -27,7 +27,11 @@
       "determine the period of validity of the regular residence permit",
       "provide the alien with a document proving lawful residence"
     ],
-    "Terminating_postcondition": "application to provide a temporary regular residence permit",
-    "References_to_sources": "Art. 14 (1) Aliens Act, main clause and under (a)"
+    "Terminating_postcondition": [
+      "application to provide a temporary regular residence permit"
+    ],
+    "References_to_sources": [
+      "Art. 14 (1) Aliens Act, main clause and under (a)"
+    ]
   }
   
