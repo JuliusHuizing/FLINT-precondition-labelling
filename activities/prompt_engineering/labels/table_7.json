@@ -1,0 +1,57 @@
+{
+    "Action": "reject",
+    "Actor": "Minister of Justice and Security",
+    "Object": "application to provide a temporary regular residence permit",
+    "Recipient / Interested Party": "alien",
+    "Preconditions": [
+      {
+        "condition": "alien has a travel ban or has been signaled for the purpose of refusing entry"
+      },
+      {
+        "OR": "alien has pronouncement of undesirability"
+      },
+      {
+        "OR NOT": "application contains purpose of residence"
+      },
+      {
+        "OR NOT": "alien has a provisional temporary residence permit"
+      },
+      {
+        "OR NOT": "alien has a valid border-crossing document"
+      },
+      {
+        "OR NOT": "interested party has sufficient, independent, long-term means of support"
+      },
+      {
+        "OR": "alien constitutes a threat to public order or national security"
+      },
+      {
+        "OR NOT": "alien is willing to cooperate in a medical examination of a disease designated by the Public Health Act or to undergo medical treatment for such a disease"
+      },
+      {
+        "OR": "alien has performed any work in violation of the Aliens Labor Act"
+      },
+      {
+        "OR NOT": "alien meets the restriction related to the purpose of residence"
+      },
+      {
+        "OR NOT": "alien has sufficient knowledge of the Dutch language and Dutch society"
+      },
+      {
+        "OR": "alien has provided incorrect data or has withheld data"
+      },
+      {
+        "OR NOT": "alien has only resided in the Netherlands on the basis of Article 8 Aliens Act"
+      },
+      {
+        "OR NOT": "sponsor has submitted a statement for the purpose of the intended residence of the alien"
+      },
+      {
+        "AND NOT": "adverse consequences of a decision may not be disproportionate to the purposes to be served by the decision"
+      }
+    ],
+    "Creating_postcondition": "decision to reject application to provide a temporary regular residence permit",
+    "Terminating_postcondition": "application to provide a temporary regular residence permit",
+    "References_to_sources": "Art. 14 (1) Aliens Act, main clause and under (a)"
+  }
+  

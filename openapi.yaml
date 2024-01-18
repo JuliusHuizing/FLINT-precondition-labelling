@@ -1,0 +1,145 @@
+openapi: 3.0.0
+info:
+  title: Act Frame Constructer API
+  version: 1.0.0
+# ... other necessary parts of the spec ...
+paths:
+  /dataprocess:
+    post:
+      summary: Process user input
+      description: Endpoint to process user input
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              
+      responses:
+        '200':
+          description: Successfully processed the data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MainResponse'
+components:
+  schemas:
+    # ... [Previous definitions for Condition, NotCondition, AndConditions, OrConditions, NotConditions, and Preconditions] ...
+
+    MainResponse:
+      type: object
+      properties:
+        Action:
+          type: string
+          example: grant
+        Actor:
+          type: string
+          example: Minister of Justice and Security
+        Object:
+          type: string
+          example: application to provide a temporary regular residence permit
+        Recipient:
+          type: string
+          example: alien
+        Preconditions:
+          $ref: '#/components/schemas/Preconditions'
+        Creating_postcondition:
+          type: array
+          items:
+            type: string
+          example:
+            - decision to grant an application to provide a temporary regular residence permit
+            - granting a temporary regular residence permit under restrictions
+            - determine the period of validity of the regular residence permit
+            - provide the alien with a document proving lawful residence
+        Terminating_postcondition:
+          type: array
+          items:
+            type: string
+          example:
+            - application to provide a temporary regular residence permit
+        References_to_sources:
+          type: array
+          items:
+            type: string
+          example:
+            - Art. 14 (1) Aliens Act, main clause and under (a)
+      required:
+        - Action
+        - Actor
+        - Object
+        - Recipient
+        - Preconditions
+        - Creating_postcondition
+        - Terminating_postcondition
+        - References_to_sources
+
+    Condition:
+      type: object
+      properties:
+        condition:
+          type: string
+      required:
+        - condition
+
+    NotCondition:
+      type: object
+      properties:
+        NOT:
+          oneOf:
+            - $ref: '#/components/schemas/Condition'
+            - type: string
+      required:
+        - NOT
+
+    AndConditions:
+      type: object
+      properties:
+        AND:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/Condition'
+              - $ref: '#/components/schemas/NotCondition'
+          example:
+            - condition: regular residence permit is granted from the day on which the alien has demonstrated that he meets all conditions
+            - NOT: residence permit granted earlier than from the day on which the application was received
+            - NOT: alien has a travel ban or has been signaled for the purpose of refusing entry
+            - NOT: alien has pronouncement of undesirability
+      required:
+        - AND
+
+    OrConditions:
+      type: object
+      properties:
+        OR:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/Condition'
+              - $ref: '#/components/schemas/NotCondition'
+      required:
+        - OR
+
+    NotConditions:
+      type: object
+      properties:
+        NOT:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/Condition'
+              - $ref: '#/components/schemas/NotCondition'
+      required:
+        - NOT
+
+    Preconditions:
+      type: array
+      items:
+        oneOf:
+          - $ref: '#/components/schemas/AndConditions'
+          - $ref: '#/components/schemas/OrConditions'
+          - $ref: '#/components/schemas/NotConditions'

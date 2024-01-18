@@ -1,8 +1,5 @@
-# FLINT-precondition-labelling
-Automatically extract preconditions for FLINT frames from Dutch sources of norms.
-
-
-# Usage
+# FLINT-Frame-Service
+Automatically extract FLINT ACT frames from Dutch sources of norms.
 
 ## Usage
 
@@ -24,10 +21,20 @@ OPENAI_SECRET_KEY=<YOUR_SECRET_KEY_HERE>
   FlintFiller-srl with a lower python version results in an error.
 
 
+### Using the Act Frame Extractor Microservice
+To start running the microservice for extracting act frames from user inputs, run:
+
+```bash
+flask --app flint_frame_service run
+```
+And request a response like:
+
+```bash
+curl -X POST http://127.0.0.1:5000/extract-act-frame \
+-H "Content-Type: application/json" \
+-d '{"article_string": "personal data shall be processed lawfully."}'
+```
 
 ## Report:
 - [view only](https://www.overleaf.com/read/vwhrjrsnsxrj#6d5464)
 
-## TODO's:
-- [Project Board](https://github.com/users/JuliusHuizing/projects/1/views/1)
-- 

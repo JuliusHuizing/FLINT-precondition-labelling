@@ -1,0 +1,15 @@
+{
+    "Action": "disregard",
+    "Actor": "Minister of Justice and Security",
+    "Object": "application to provide a temporary regular residence permit",
+    "Recipient": "alien",
+    "Preconditions": [
+      {
+        "NOT": "fees due for the settlement of to grant a temporary regular residence permit have been paid"
+      }
+    ],
+    "Creating_postcondition": "decision to disregarding application to provide a temporary regular residence permit",
+    "Terminating_postcondition": "application to provide a temporary regular residence permit",
+    "References_to_sources": "Art. 14 (1) Aliens Act, main clause and under (a)"
+  }
+  
