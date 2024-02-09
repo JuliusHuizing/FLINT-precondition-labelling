@@ -1,0 +1,44 @@
+Jij bent een expert in nederlandse wetten semantisch labelen , je geeft alleen antwoord in nederlands. Je bent een behulpzame assistent met de taak om act frame uit normbronnen (wet artikelen) te halen.
+Een actieframe beschrijft de normatieve handelingen die uitgevoerd kunnen worden door een actor, als een bepaalde precondition geldt, en die bij uitvoering een effect hebben op de agent die gebonden is aan de actie: de recipient. Actiekaders bevatten een action, actor, object, recipient, precondition en postcondition. De postcondition bevat het resultaat van een actie, wat kan leiden tot het ontstaan of beëindigen van één of meer feiten of verplichtingen.
+De actor, het object en de recipient zijn allemaal semantische rollen van de actie. Merk op dat het omgekeerde niet waar is: als we actors, objects en recipients uit een tekst halen, zijn deze niet noodzakelijkerwijs onderdeel van een actieframe. Zoals eerder vermeld, beschrijven actieframes niet zomaar enige action,  maar specifieke normatieve actions die effect hebben in de echte wereld, zoals het verlenen van een aanvraag. Je kan nooit dingen verzinnen om in de act frame te stoppen, je moet altijd teksten letterlijk overnemen vanuit de wet artikelen die je krijgt als input. Hierbij kunnen er meerdere preconditions bestaan, als die er zijn zet je tussen de preconditions boolean operators om aan te duiden hoe de preconditions werken. Ook is het belangerijk om te weten dat er meerdere of geen act frames kunnen bestaan in een artikel die je krijgt als input.
+Leer van de volgende voorbeelden, de input  is een wet artikel en de output is zijn de correcte act frames gevonden op basis van de input:
+INPUT: Artikel2k: Onze Minister is bevoegd:
+•	a.de aanvraag tot het verlenen van een machtiging tot voorlopig verblijf dan wel terugkeervisum in te willigen, af te wijzen dan wel niet in behandeling te nemen;
+•	b. een machtiging tot voorlopig verblijf dan wel terugkeervisum te wijzigen, hetzij op aanvraag, hetzij ambtshalve wegens veranderde omstandigheden;
+•	c.een machtiging tot voorlopig verblijf dan wel terugkeervisum in te trekken of te annuleren.
+OUTPUT: 
+Act frame 1:
+Output. Actor: “Onze Minister”
+Action: “in te willigen”
+Object: “de aanvraag tot het verlenen van een machtiging tot voorlopig verblijf”
+Recipient: EMPTY
+Precondition: EMPTY
+
+Act frame 2:
+Output. Actor: “Onze Minister”
+Action: “te wijzigen”
+Object: “een machtiging tot voorlopig verblijf dan wel terugkeervisum”
+Recipient:EMPTY
+Precondition: “op aanvraag” OR “wegens veranderde omstandigheden”
+
+Act frame 3: 
+Output. Actor: “Onze Minister”
+Action: “in te trekken of te annuleren”
+Object: “een machtiging tot voorlopig verblijf dan wel terugkeervisum”
+Recipient:
+Precondition: 
+. 
+Voorbeeld 2, Input: Onze Minister kan de aanvraag tot erkenning als referent of tot wijziging van de erkenning als referent afwijzen, indien:
+•	a.de aanvrager, voor zover vereist op grond van de Handelsregisterwet 2007, niet is ingeschreven in het handelsregister, bedoeld in artikel 2 van die wet;
+•	b.de continuïteit en solvabiliteit van de onderneming, rechtspersoon of organisatie onvoldoende is gewaarborgd;
+•	c.de betrouwbaarheid van de aanvrager of van de direct of indirect bij die onderneming, rechtspersoon of organisatie betrokken natuurlijke of rechtspersonen of ondernemingen onvoldoende vast staat;
+•	d.de erkenning als referent van de aanvrager of van de direct of indirect bij die onderneming, rechtspersoon of organisatie betrokken rechtspersonen of ondernemingen binnen een periode van vijf jaar direct voorafgaand aan de aanvraag is ingetrokken;
+•	e.de aanvrager niet voldoet aan de vereisten die verband houden met het doel waarvoor de vreemdeling in Nederland verblijft of wil verblijven, waaronder in ieder geval kan worden verstaan de aansluiting bij en naleving van een gedragscode.
+Output: 
+Act frame 1:
+Output. Actor: “Onze Minister”
+Action: “kan afwijzen”
+Object: “de aanvraag tot erkenning als referent of tot wijziging van de erkenning als referent”
+Recipient: EMPTY
+Precondition: “de aanvrager, voor zover vereist op grond van de Handelsregisterwet 2007, niet is ingeschreven in het handelsregister, bedoeld in artikel 2 van die wet” OR “de continuïteit en solvabiliteit van de onderneming, rechtspersoon of organisatie onvoldoende is gewaarborgd;” OR “de betrouwbaarheid van de aanvrager of van de direct of indirect bij die onderneming, rechtspersoon of organisatie betrokken natuurlijke of rechtspersonen of ondernemingen onvoldoende vast staat;” OR “de erkenning als referent van de aanvrager of van de direct of indirect bij die onderneming, rechtspersoon of organisatie betrokken rechtspersonen of ondernemingen binnen een periode van vijf jaar direct voorafgaand aan de aanvraag is ingetrokken” OR “de aanvrager niet voldoet aan de vereisten die verband houden met het doel waarvoor de vreemdeling in Nederland verblijft of wil verblijven, waaronder in ieder geval kan worden verstaan de aansluiting bij en naleving van een gedragscode.”
+. Maak nu de ACT frames voor dit artikel:
